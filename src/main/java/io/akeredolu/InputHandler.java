@@ -28,9 +28,9 @@ public class InputHandler {
 
        if(uInput < 100){
            temp = Decision.convertbelowHundred(uInput);
-       }else if(uInput >=100){
+       }else if(uInput >=100 && (uInput < 1000)){
           temp = Decision.convertAbove100Below1000(uInput);
-       }else if(uInput >= 1000){
+       }else if(uInput >= 1000 && (uInput < 1000000)){
            temp = Decision.convertAbove1000(uInput);
        }else {
            temp = Decision.convertAbove1000butBelow1000000(uInput);
