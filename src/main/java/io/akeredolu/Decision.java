@@ -7,23 +7,22 @@ public class Decision {
 
     public static final String[] belowHundred = {"","", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
 
-    public static final String[] belowTwenty = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    public static final String[] belowTwenty = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+            "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
 
-    public static String convertbelowHundred(int number ){
+    public static String convertBelowHundred(int number ){
         if (number < 20 ){
             return belowTwenty[number];
-
-        }else{
+        } else{
             return belowHundred[number / 10] + belowTwenty[number % 10];
         }
-
     }
 
     public static String convertAbove100Below1000(int number ){
         int hundreds = number /100;
         String result = "";
         result += addHundred(hundreds);
-        result+= convertbelowHundred(number - (hundreds * 100));
+        result+= convertBelowHundred(number - (hundreds * 100));
         return  result;
     }
 
@@ -48,7 +47,7 @@ public class Decision {
         if(number == 0){
             return "";
         }else {
-            return convertbelowHundred(number) + "Hundred";
+            return convertBelowHundred(number) + "Hundred";
         }
     }
 
@@ -58,19 +57,17 @@ public class Decision {
         }if (number > 99){
             return convertAbove100Below1000(number) + "Thousand";
         }else{
-            return convertbelowHundred(number) + "Thousand";
+            return convertBelowHundred(number) + "Thousand";
         }
-
     }
 
     public static String addMillion(int number){
         if(number > 99){
             return convertAbove100Below1000(number) + "Million";
         }else{
-            return convertbelowHundred(number) + "Million";
+            return convertBelowHundred(number) + "Million";
         }
     }
-
 }
 
 

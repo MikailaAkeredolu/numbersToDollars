@@ -2,8 +2,6 @@ package io.akeredolu;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by mikailaakeredolu on 6/11/16.
  */
@@ -11,16 +9,16 @@ import static org.junit.Assert.*;
     public class DecisionTest {
     @Test
     public void convertBelowHundred() throws Exception {
-        Decision.convertbelowHundred(1);
-        String actual = Decision.convertbelowHundred(1);;
+        Decision.convertBelowHundred(1);
+        String actual = Decision.convertBelowHundred(1);;
         String expected = "One";
         Assert.assertEquals(actual,expected);
     }
 
     @Test
     public void convertaboveninetynineButBelowThousandTest() throws Exception {
-        Decision.convertbelowHundred(159);
-        String actual = Decision.convertbelowHundred(159);
+        Decision.convertBelowHundred(159);
+        String actual = Decision.convertBelowHundred(159);
         String expected = "OneHundredFiftyNine";
         Assert.assertEquals(expected,actual);
     }
